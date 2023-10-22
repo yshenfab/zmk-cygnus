@@ -74,16 +74,12 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAB_ESC_CTRL";
             #binding-cells = <0>;
-            bindings =
-                <&mt LCTRL ESC>,
-                <&kp TAB>;
+            bindings = <&mt LCTRL ESC>, <&kp TAB>;
         };
         gqt: global-quick-tap {
             compatible = "zmk,behavior-hold-tap";
             label = "GLOBAL_QUICK_TAP";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             quick-tap-ms = <200>;
@@ -93,9 +89,7 @@
         ltq: ltq {
             compatible = "zmk,behavior-hold-tap";
             label = "LTQ";
-            bindings =
-                <&mo>,
-                <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -109,10 +103,10 @@
 
         default_layer {
             bindings = <
-&kp Q                    &kp W              &kp E                     &kp R             &kp T  &kp Y                &kp U              &kp I        &kp O            &kp P
-&hm LEFT_GUI A           &kp S              &hm LCTRL D               &hm LEFT_SHIFT F  &kp G  &kp H                &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMI
-&kp Z                    &kp X              &kp C                     &kp V             &kp B  &kp N                &kp M              &kp COMMA    &kp PERIOD       &kp FSLH
-                &kp TAB         &lt 1 BSPC               &lt 2 ENTER                    &mo 3  &ltq 2 SPACE  &mo 4
+&kp Q           &kp W                    &kp E               &kp R  &kp T  &kp Y                &kp U  &kp I      &kp O       &kp P
+&kp A           &kp S                    &kp D               &kp F  &kp G  &kp H                &kp J  &kp K      &kp L       &kp COLON
+&kp Z           &kp X                    &kp C               &kp V  &kp B  &kp N                &kp M  &kp COMMA  &kp PERIOD  &kp FSLH
+       &kp TAB         &ltq 1 BACKSPACE         &lt 2 ENTER         &mo 3  &ltq 2 SPACE  &mo 4
             >;
         };
 
