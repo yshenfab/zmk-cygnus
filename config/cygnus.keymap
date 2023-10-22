@@ -70,29 +70,37 @@
     };
 
     behaviors {
-        hm: homerow_mods {
+        tab_esc_ctrl: tab_esc_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAB_ESC_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&mt LCTRL ESC>,
+                <&kp TAB>;
+        };
+        gqt: global-quick-tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            label = "GLOBAL_QUICK_TAP";
+            bindings =
+                <&kp>,
+                <&kp>;
 
-            quick-tap-ms = <180>;
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
             global-quick-tap;
         };
         ltq: ltq {
             compatible = "zmk,behavior-hold-tap";
             label = "LTQ";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&mo>, <&kp>;
+            bindings =
+                <&mo>,
+                <&kp>;
 
-            quick-tap-ms = <180>;
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
             global-quick-tap;
+            quick-tap-ms = <200>;
         };
     };
 
