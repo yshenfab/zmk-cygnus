@@ -212,7 +212,7 @@
         // - [ ]
         combo_todo {
             bindings = <&todo>;
-            key-positions = <14 15>;
+            key-positions = <14 15>; // gh
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -226,49 +226,49 @@
 
         combo_email {
             bindings = <&email>;
-            key-positions = <2 26>;
+            key-positions = <2 26>; // em
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_mobile {
             bindings = <&mobile>;
-            key-positions = <8 26>; // mo 
+            key-positions = <4 2 18>; // tel
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_name {
             bindings = <&name>;
-            key-positions = <11 5>;
+            key-positions = <5 11>; // ys
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_uts {
             bindings = <&uts>;
-            key-positions = <4 6>;
+            key-positions = <6 4 11>; // uts
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_sid {
             bindings = <&sid>;
-            key-positions = <12 7>;
+            key-positions = <7 12>; // id
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_utsaddr {
             bindings = <&utsaddr>;
-            key-positions = <6 10>; // ua
+            key-positions = <6 10 12>; // uad
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_addr {
             bindings = <&addr>;
-            key-positions = <3 10>; // ra
+            key-positions = <3 10 12>; // rad
             timeout-ms = <50>;
             layers = <0>;
         };
