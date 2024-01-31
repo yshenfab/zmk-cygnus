@@ -60,6 +60,14 @@
             bindings = <&mo>, <&kp>;
             hold-trigger-on-release; // delay positional check until key-release
         };
+
+        // tap-dance
+        td: td {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>;
+        };
     };
 
     combos {
@@ -269,6 +277,20 @@
         combo_addr {
             bindings = <&addr>;
             key-positions = <3 10 12>; // rad
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws1 {
+            bindings = <&kp LA(1)>;
+            key-positions = <0 1>; // qw
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws2 {
+            bindings = <&kp LA(2)>;
+            key-positions = <1 1>; // ww
             timeout-ms = <50>;
             layers = <0>;
         };
