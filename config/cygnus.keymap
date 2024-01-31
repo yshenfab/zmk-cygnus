@@ -280,12 +280,12 @@
             layers = <0>;
         };
 
-        //combo_ws2 {
-            //bindings = <&kp LA(2)>;
-            //key-positions = <1 1>; // ww
-            //timeout-ms = <50>;
-            //layers = <0>;
-        //};
+        combo_ws2 {
+            bindings = <&kp LA(2)>;
+            key-positions = <1 1>; // ww
+            timeout-ms = <50>;
+            layers = <0>;
+        };
     };
 
     macros {
