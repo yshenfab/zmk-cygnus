@@ -275,7 +275,7 @@
 
         combo_ws1 {
             bindings = <&kp LA(1)>;
-            key-positions = <0 1>; // qw
+            key-positions = <0 1>; // qq
             timeout-ms = <50>;
             layers = <0>;
         };
@@ -283,6 +283,27 @@
         combo_ws2 {
             bindings = <&kp LA(2)>;
             key-positions = <1 1>; // ww
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws3 {
+            bindings = <&kp LA(3)>;
+            key-positions = <2 2>; // ee
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws4 {
+            bindings = <&kp LA(4)>;
+            key-positions = <3 3>; // rr
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws5 {
+            bindings = <&kp LA(5)>;
+            key-positions = <4 4>; // tt
             timeout-ms = <50>;
             layers = <0>;
         };
