@@ -24,17 +24,6 @@
 
 / {
     behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-
         // timeless homerow mods
         thm: timeless_homerow_mods {
             label = "timeless_homerow_mods";
@@ -59,6 +48,53 @@
             require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
             hold-trigger-on-release; // delay positional check until key-release
+        };
+
+        ht: hold_tap {
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // tap-dance
+        tdq: tap_dance_q {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp Q>, <&kp LA(N1)>;
+        };
+
+        tdw: tap_dance_w {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp W>, <&kp LA(N2)>;
+        };
+
+        tde: tap_dance_e {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp E>, <&kp LA(N3)>;
+        };
+
+        tdr: tap_dance_r {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp R>, <&kp LA(N4)>;
+        };
+
+        tdt: tap_dance_t {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp T>, <&kp LA(N5)>;
         };
     };
 
@@ -272,41 +308,6 @@
             timeout-ms = <50>;
             layers = <0>;
         };
-
-        combo_ws1 {
-            bindings = <&kp LA(N1)>;
-            key-positions = <0 0>; // qq
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws2 {
-            bindings = <&kp LA(N2)>;
-            key-positions = <1 1>; // ww
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws3 {
-            bindings = <&kp LA(N3)>;
-            key-positions = <2 2>; // ee
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws4 {
-            bindings = <&kp LA(N4)>;
-            key-positions = <3 3>; // rr
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws5 {
-            bindings = <&kp LA(N5)>;
-            key-positions = <5 5>; // tt
-            timeout-ms = <50>;
-            layers = <0>;
-        };
     };
 
     macros {
@@ -402,7 +403,8 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
+//&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
+&tdq   &tdw   &tde   &tdr   &tdt          &kp Y    &kp U  &kp I      &kp O    &kp P
 HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
 &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
               &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
