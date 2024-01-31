@@ -403,9 +403,10 @@
 
         default_layer {
             bindings = <
-//&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
-&tdq   &tdw   &tde   &tdr   &tdt          &kp Y    &kp U  &kp I      &kp O    &kp P
-HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
+&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
+//&tdq   &tdw   &tde   &tdr   &tdt          &kp Y    &kp U  &kp I      &kp O    &kp P
+&thm LCTRL A  &thm LALT S  &thm LGUI D  &thm LSHFT F  &kp G  &kp H &thm RSHFT J  &thm RGUI K  &thm RALT L  &thm RCTRL SEMI
+//HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
 &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
               &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
             >;
