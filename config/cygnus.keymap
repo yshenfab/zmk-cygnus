@@ -49,70 +49,64 @@
             bindings = <&mo>, <&kp>;
             hold-trigger-on-release; // delay positional check until key-release
         };
-
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-
-        // tap-dance
-        td_1: td_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_1";
-            #binding-cells = <0>;
-            bindings = <&mlt 2 TAB>, <&kp LA(N1)>, <&kp LA(LS(N1))>;
-        };
-
-        td_2: td_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_2";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp LA(N2)>, <&kp LA(LS(N2))>;
-        };
-
-        td_3: td_3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_3";
-            #binding-cells = <0>;
-            bindings = <&kp RET>, <&kp LA(N3)>, <&kp LA(LS(N3))>;
-        };
-
-        td_4: td_4 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_4";
-            #binding-cells = <0>;
-            bindings = <&mlt 1 BSPC>, <&kp LA(N4)>, <&kp LA(LS(N4))>;
-        };
-
-        td_prev_ws: td_prev_ws {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_PREV_WS";
-            #binding-cells = <0>;
-            bindings = <&mt LGUI ESC>, <&kp LA(B)>;
-        };
-
-        td_next_ws: td_next_ws {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_NEXT_WS";
-            #binding-cells = <0>;
-            bindings = <&mt LALT DEL>, <&kp LA(N)>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        // ESC
-        combo_esc {
-            timeout-ms = <50>;
+        combo_ws1 {
+            bindings = <&kp LA(N1)>;
             key-positions = <0 1>;
-            bindings = <&kp ESC>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws2 {
+            bindings = <&kp LA(N2)>;
+            key-positions = <1 2>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws3 {
+            bindings = <&kp LA(N3)>;
+            key-positions = <2 3>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_ws4 {
+            bindings = <&kp LA(N4)>;
+            key-positions = <3 4>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_mws1 {
+            bindings = <&kp LA(LS(N1))>;
+            key-positions = <5 6>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_mws2 {
+            bindings = <&kp LA(LS(N2))>;
+            key-positions = <6 7>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_mws3 {
+            bindings = <&kp LA(LS(N3))>;
+            key-positions = <7 8>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_mws4 {
+            bindings = <&kp LA(LS(N4))>;
+            key-positions = <8 9>;
+            timeout-ms = <50>;
             layers = <0>;
         };
 
@@ -145,22 +139,6 @@
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&kp RBRC>;
-            layers = <0>;
-        };
-
-        // (
-        combo_lpar {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp LPAR>;
-            layers = <0>;
-        };
-
-        // )
-        combo_rpar {
-            timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&kp RPAR>;
             layers = <0>;
         };
 
@@ -236,17 +214,15 @@
             layers = <0>;
         };
 
-        // C-LEFT
-        combo_c_left {
-            bindings = <&kp LC(LEFT)>;
+        combo_a_b {
+            bindings = <&kp LA(B)>;
             key-positions = <16 17>;
             timeout-ms = <50>;
             layers = <0>;
         };
 
-        // C-RIGHT
-        combo_c_right {
-            bindings = <&kp LC(RIGHT)>;
+        combo_a_n {
+            bindings = <&kp LA(N)>;
             key-positions = <17 18>;
             timeout-ms = <50>;
             layers = <0>;
@@ -345,7 +321,6 @@
             bindings = <&kp LS(Y) &kp A &kp N &kp G &kp SPACE &kp LS(S) &kp H &kp E &kp N>;
         };
 
-        // University of Technology Sydney
         uts: uts {
             compatible = "zmk,behavior-macro";
             label = "UTS";
@@ -413,8 +388,7 @@
 &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
 HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
 &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
-              // &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
-                 &td_prev_ws  &td_1  &td_2        &td_3  &td_4  &td_next_ws
+     &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
             >;
         };
 
