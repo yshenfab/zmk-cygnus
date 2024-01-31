@@ -62,7 +62,6 @@
         };
 
         // tap-dance
-
         td_q: td_q {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q";
@@ -74,15 +73,33 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_W";
             #binding-cells = <0>;
+            tapping-term-ms = <150>;
             bindings = <&kp W>, <&kp LA(N2)>;
         };
 
-        // tdq: tap_dance_q {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <150>;
-        //     bindings = <&kp Q>, <&kp LA(N1)>;
-        // };
+        td_e: td_e {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_E";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&kp LA(N3)>;
+        };
+
+        td_r: td_r {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_R";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp R>, <&kp LA(N4)>;
+        };
+
+        td_t: td_t {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_T";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp T>, <&kp LA(N5)>;
+        };
     };
 
     combos {
@@ -391,9 +408,8 @@
         default_layer {
             bindings = <
 //&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
-&td_q         &td_w        &kp E        &kp R         &kp T        &kp Y      &kp U         &kp I        &kp O        &kp P
-&thm LCTRL A  &thm LALT S  &thm LGUI D  &thm LSHFT F  &kp G  &kp H &thm RSHFT J  &thm RGUI K  &thm RALT L  &thm RCTRL SEMI
-//HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
+&td_q         &td_w        &kp td_e     &kp td_r      &kp td_t     &kp Y      &kp U         &kp I        &kp O        &kp P
+HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
 &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
               &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
             >;
