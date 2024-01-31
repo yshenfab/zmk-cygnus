@@ -62,39 +62,46 @@
         };
 
         // tap-dance
-        td_q: td_q {
+        td_1: td_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_Q";
+            label = "TD_1";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp LA(N1)>, <&kp LA(LS(N1))>;
+            bindings = <&mlt 2 TAB>, <&kp LA(N1)>, <&kp LA(LS(N1))>;
         };
 
-        td_w: td_w {
+        td_2: td_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_W";
+            label = "TD_2";
             #binding-cells = <0>;
-            bindings = <&kp W>, <&kp LA(N2)>, <&kp LA(LS(N2))>;
+            bindings = <&kp SPACE>, <&kp LA(N2)>, <&kp LA(LS(N2))>;
         };
 
-        td_e: td_e {
+        td_3: td_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_E";
+            label = "TD_3";
             #binding-cells = <0>;
-            bindings = <&kp E>, <&kp LA(N3)>, <&kp LA(LS(N3))>;
+            bindings = <&kp RET>, <&kp LA(N3)>, <&kp LA(LS(N3))>;
         };
 
-        td_r: td_r {
+        td_4: td_4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_R";
+            label = "TD_4";
             #binding-cells = <0>;
-            bindings = <&kp R>, <&kp LA(N4)>, <&kp LA(LS(N4))>;
+            bindings = <&mlt 1 BSPC>, <&kp LA(N4)>, <&kp LA(LS(N4))>;
         };
 
-        td_t: td_t {
+        td_prev_ws: td_prev_ws {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_T";
+            label = "TD_PREV_WS";
             #binding-cells = <0>;
-            bindings = <&kp T>, <&kp LA(N5)>, <&kp LA(LS(N5))>;
+            bindings = <&mt LGUI ESC>, <&kp LA(B)>;
+        };
+
+        td_next_ws: td_next_ws {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NEXT_WS";
+            #binding-cells = <0>;
+            bindings = <&mt LALT DEL>, <&kp LA(N)>;
         };
     };
 
@@ -403,11 +410,11 @@
 
         default_layer {
             bindings = <
-//&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
-&td_q         &td_w        &td_e        &td_r         &td_t        &kp Y      &kp U         &kp I        &kp O        &kp P
+&kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
 HRML(A,    S,     D,        F) &kp G        &kp H   HRMR(J,     K,         L,       SEMI)
 &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
-              &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
+              // &mt LGUI ESC  &mlt 1 TAB  &kp SPACE    &kp RET  &mlt 2 BSPC  &mt LALT DEL
+                 &td_prev_ws  &td_1  &td_2        &td_3  &td_4  &td_next_ws
             >;
         };
 
