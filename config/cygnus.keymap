@@ -54,62 +54,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_ws1 {
-            bindings = <&kp LA(N1)>;
-            key-positions = <0 1>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws2 {
-            bindings = <&kp LA(N2)>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws3 {
-            bindings = <&kp LA(N3)>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws4 {
-            bindings = <&kp LA(N4)>;
-            key-positions = <3 4>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_mws1 {
-            bindings = <&kp LA(LS(N1))>;
-            key-positions = <5 6>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_mws2 {
-            bindings = <&kp LA(LS(N2))>;
-            key-positions = <6 7>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_mws3 {
-            bindings = <&kp LA(LS(N3))>;
-            key-positions = <7 8>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_mws4 {
-            bindings = <&kp LA(LS(N4))>;
-            key-positions = <8 9>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
         // [
         combo_lbkt {
             timeout-ms = <50>;
