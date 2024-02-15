@@ -158,20 +158,6 @@
             layers = <0>;
         };
 
-        combo_ws_prev {
-            bindings = <&kp LG(B)>;
-            key-positions = <16 17>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_ws_next {
-            bindings = <&kp LG(N)>;
-            key-positions = <17 18>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
         // - [ ]
         combo_todo {
             bindings = <&todo>;
@@ -225,13 +211,6 @@
         combo_utsaddr {
             bindings = <&utsaddr>;
             key-positions = <6 10 12>; // uad
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        combo_addr {
-            bindings = <&addr>;
-            key-positions = <3 10 12>; // rad
             timeout-ms = <50>;
             layers = <0>;
         };
@@ -312,15 +291,6 @@
             wait-ms = <10>;
             tap-ms = <10>;
             bindings = <&kp N1 &kp N5 &kp SPACE &kp LS(B) &kp R &kp O &kp A &kp D &kp W &kp A &kp Y &kp SPACE &kp LS(U) &kp L &kp T &kp I &kp M &kp O &kp COMMA &kp SPACE &kp LS(N) &kp LS(S) &kp LS(W) &kp SPACE &kp N2 &kp N0 &kp N0 &kp N7>;
-        };
-
-        addr: addr {
-            compatible = "zmk,behavior-macro";
-            label = "ADDRESS";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp N1 &kp FSLH &kp N3 &kp N1 &kp SPACE &kp LS(G) &kp O &kp R &kp D &kp O &kp N &kp SPACE &kp LS(S) &kp T &kp COMMA &kp SPACE &kp LS(B) &kp U &kp R &kp W &kp O &kp O &kp D &kp SPACE &kp LS(N) &kp LS(S) &kp LS(W) &kp SPACE &kp N2 &kp N1 &kp N3 &kp N4>;
         };
     };
 
