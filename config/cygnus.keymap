@@ -304,12 +304,14 @@
             compatible = "zmk,behavior-macro";
             label = "ADDR";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings = <&kp N4 &kp N8 &kp SPACE &kp LS(R) &kp E &kp D &kp M &kp Y &kp R &kp E &kp SPACE &kp LS(R) &kp D &kp COMMA &kp SPACE &kp LS(S) &kp T &kp R &kp A &kp T &kp H &kp F &kp I &kp E &kp L &kp D &kp SPACE &kp LS(N) &kp LS(S) &kp LS(W) &kp SPACE &kp N2 &kp N1 &kp N3 &kp N5>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&kp N4 &kp N8 &kp SPACE &kp LS(R) &kp E &kp D &kp M &kp Y &kp R &kp E &kp SPACE &kp LS(R) &kp D &kp COMMA>
+                , <&macro_wait_time 50>
+                , <&kp SPACE &kp LS(S) &kp T &kp R &kp A &kp T &kp H &kp F &kp I &kp E &kp L &kp D>
+                , <&macro_wait_time 50>
+                , <&kp SPACE &kp LS(N) &kp LS(S) &kp LS(W) &kp SPACE &kp N2 &kp N1 &kp N3 &kp N5>;
         };
-
-        48 Redmyre Rd, Strathfield NSW 21
     };
 
     keymap {
